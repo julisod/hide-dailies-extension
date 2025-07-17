@@ -18,8 +18,5 @@
     "default_title": "Hide dailies"
   },
 
-  "permissions": [
-    "activeTab",
-    "tabs"
-  ]
+  "permissions": ["activeTab", "tabs"]
 }
