@@ -16,13 +16,16 @@ const handleClick = async (tab) => {
       browser.tabs.insertCSS(tab.id, {
         file: "no-dailies.css",
       });
+      browser.browserAction.setBadgeBackgroundColor({ color: "darkgoldenrod" });
     } else if (nextState === "OFF") {
       // Remove the CSS file when the user turns the extension off
       browser.tabs.removeCSS(tab.id, {
         file: "no-dailies.css",
       });
+      browser.browserAction.setBadgeBackgroundColor({ color: "dimgrey" });
     }
   }
 };
 
+browser.browserAction.setBadgeTextColor({ color: "white" });
 browser.browserAction.onClicked.addListener(handleClick);
